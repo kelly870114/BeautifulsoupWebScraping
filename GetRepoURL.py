@@ -20,12 +20,12 @@ for page in range(1, 3):  # 執行1~2頁
  
     soup = BeautifulSoup(browser.page_source, "html.parser")
  
-    # 取得所有class為pull-left infoContent的<li>標籤
+    # 取得所有class為text-bold wb-break-word的<a>標籤
     elements = soup.find_all("a", {"class": "text-bold wb-break-word"})
  
     print(f"==========第{str(page)}頁==========")
     for element in elements:
-        # 取得<li>標籤下的<h3>標籤，再取得<h3>標籤下的<a>標籤文字，並且去掉空白
+        # 取得所有'href'
         title = element.get('href')
         print(title)
     
